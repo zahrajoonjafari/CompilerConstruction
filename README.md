@@ -1,47 +1,69 @@
-# mC Compiler
+# Compiler Construction
 
-This repository holds a *getting started* code-base for the [compiler construction course](https://git.uibk.ac.at/c7031162/703602-Compiler-Construction).
+|    Date    |                  Deadline                  |
+| ---------- | ------------------------------------------ |
+| 2019-03-15 | [Example Input](example_input.md)          |
+| 2019-04-05 | [Milestone 1](specification.md#milestones) |
+| 2019-05-03 | [Milestone 2](specification.md#milestones) |
+| 2019-05-24 | [Milestone 3](specification.md#milestones) |
+| 2019-06-14 | [Milestone 4](specification.md#milestones) |
+| 2019-06-21 | [Milestone 5](specification.md#milestones) |
+| 2019-07-12 | [Final](evaluation_scheme.md)              |
 
-Be sure to understand the provided code before using it!
+- [mC Compiler Specification](specification.md)
+- [Getting Started Code-base](https://git.uibk.ac.at/c7031162/mcc)
+- [Submission Guideline](submission.md)
 
-- See [Development Notes](docs/development_notes.md)
+## Structure
 
-## Prerequisites
+The ultimate goal of this course is to build a working compiler according to the given specification.
 
-- [Meson](http://mesonbuild.com/) in a recent version (`0.44.0`)
-  (you may want to install it via `pip3 install --user meson`)
-- [Ninja](https://ninja-build.org/)
-- `time`, typically located at `/usr/bin/time`, do not confuse this with the Bash built-in
-- `flex` for generating the lexer
-- `bison` for generating the parser
-- A compiler supporting C11 — typically GCC or Clang
+You are not allowed to use code from other people participating in this course or code that has been submitted previously by somebody else.
+However, a *getting started* code-base is provided.
 
-## Build Instructions
+You will be able to work on your compiler during the lab.
+I'll be present for questions all the time, yet a big part of this course is to acquire the necessary knowledge yourself.
 
-First, generate the build directory.
+Please note that minor modifications may be made to the specification until 1 week before the final deadline.
+Therefore, double check for modifications before submitting — Git provides you the diff anyway.
 
-    $ meson builddir
-    $ cd builddir
+Apart from this, there will be one *required* submission near the beginning of the semester.
+You have to submit an additional example input, which may be added to the set of example inputs — this way the number of integration tests is extended.
 
-Meson creates Ninja build files.
-Let's build.
+Furthermore, there are five *optional* milestones.
+They provide a golden thread and enable you to receive feedback.
 
-    $ ninja
+You may work together in teams of 1–3 people.
+Teams may span across pro-seminar groups.
 
-Unit tests can be run directly with Ninja (or Meson).
+## Grading
 
-    $ ninja test
+The final grade is computed as the weighted average of the final submission (80%) and the QA sessions (20%).
+Both of these parts as well as the majority of QA session grades must be positive to pass this course.
 
-For integration testing we try to compile mC programs and compare their output for a given input.
+Other submissions are not graded.
 
-    $ ../scripts/run_integration_tests
+Be sure to adhere to the specification, deviating from it (without stating a proper reason) will negatively impact your grade.
+See [Final Submission Evaluation Scheme](evaluation_scheme.md) for more details.
 
-Taken from the [Meson Documentation](https://mesonbuild.com/Unit-tests.html#coverage):
+### Evaluation System
 
-> If you enable coverage measurements by giving Meson the command line flag `-Db_coverage=true`, you can generate coverage reports.
-> Meson will autodetect what coverage generator tools you have installed and will generate the corresponding targets.
-> These targets are `coverage-xml` and `coverage-text` which are both provided by Gcovr and `coverage-html`, which requires Lcov and GenHTML or Gcovr with html support.
+I'll be using a virtualised, updated Ubuntu 18.04 LTS (64 bit) to examine your submissions.
+From this you can infer the software versions I'll be using.
+The submitted code has to compile and run on this system.
 
-## Known Issues
+### Absence
 
-- Parser leaks memory on invalid inputs.
+You must not be absent more than three times to pass this course.
+You do not have to inform me of your absence.
+
+## Contacting Me
+
+If you have questions or want to know more about a certain topic, I am always glad to help.
+You can find me in room 2W05 of the ICT building.
+
+You can also contact me by email, just be sure to send it from your university account.
+Please keep your email informal and include the course number in the subject.
+Preferably use the following link.
+
+📧 [send email](mailto:alexander.hirsch@uibk.ac.at?subject=703807%20-%20)

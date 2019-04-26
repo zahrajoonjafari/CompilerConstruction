@@ -1,0 +1,162 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../mcc/include/mcc/ast.h
+string.h
+../mcc/include/mcc/string.h
+stdbool.h
+-
+zconf.h
+-
+
+../mcc/include/mcc/ast_print.h
+stdio.h
+-
+mcc/ast.h
+../mcc/include/mcc/mcc/ast.h
+
+../mcc/include/mcc/ast_visit.h
+mcc/ast.h
+../mcc/include/mcc/mcc/ast.h
+
+../mcc/include/mcc/parser.h
+stdio.h
+-
+mcc/ast.h
+../mcc/include/mcc/mcc/ast.h
+
+../mcc/vendor/cutest/CuTest.h
+setjmp.h
+-
+stdarg.h
+-
+
+/home/sima/Desktop/compiler (copy)/mcc/app/mc_ast_to_dot.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+mcc/ast.h
+/home/sima/Desktop/compiler (copy)/mcc/app/mcc/ast.h
+mcc/ast_print.h
+/home/sima/Desktop/compiler (copy)/mcc/app/mcc/ast_print.h
+mcc/parser.h
+/home/sima/Desktop/compiler (copy)/mcc/app/mcc/parser.h
+
+/home/sima/Desktop/compiler (copy)/mcc/app/mcc.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+mcc/ast.h
+/home/sima/Desktop/compiler (copy)/mcc/app/mcc/ast.h
+mcc/parser.h
+/home/sima/Desktop/compiler (copy)/mcc/app/mcc/parser.h
+
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.c
+string.h
+-
+stdbool.h
+-
+mcc/parser.h
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/mcc/parser.h
+stdbool.h
+-
+stddef.h
+-
+libintl.h
+-
+alloca.h
+-
+malloc.h
+-
+stdlib.h
+-
+stdlib.h
+-
+stdio.h
+-
+assert.h
+-
+scanner.h
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.h
+utils/unused.h
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/utils/unused.h
+
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.h
+mcc/parser.h
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/mcc/parser.h
+stdbool.h
+-
+
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.c
+stdio.h
+-
+string.h
+-
+errno.h
+-
+stdlib.h
+-
+inttypes.h
+-
+parser.tab.h
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.h
+unistd.h
+-
+
+/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.h
+stdio.h
+-
+string.h
+-
+errno.h
+-
+stdlib.h
+-
+inttypes.h
+-
+unistd.h
+-
+
+/home/sima/Desktop/compiler (copy)/mcc/src/ast_print.c
+mcc/ast_print.h
+/home/sima/Desktop/compiler (copy)/mcc/src/mcc/ast_print.h
+assert.h
+-
+stdio.h
+-
+mcc/ast_visit.h
+/home/sima/Desktop/compiler (copy)/mcc/src/mcc/ast_visit.h
+../include/mcc/ast.h
+-
+mcc/ast.h
+-
+
+/home/sima/Desktop/compiler (copy)/mcc/test/unit/main_stub.inc
+stdio.h
+-
+stdlib.h
+-
+CuTest.h
+-
+
+/home/sima/Desktop/compiler (copy)/mcc/test/unit/parser_test.c
+CuTest.h
+-
+mcc/ast.h
+/home/sima/Desktop/compiler (copy)/mcc/test/unit/mcc/ast.h
+mcc/parser.h
+/home/sima/Desktop/compiler (copy)/mcc/test/unit/mcc/parser.h
+main_stub.inc
+/home/sima/Desktop/compiler (copy)/mcc/test/unit/main_stub.inc
+
