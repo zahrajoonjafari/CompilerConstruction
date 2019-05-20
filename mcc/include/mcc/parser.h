@@ -20,29 +20,44 @@ enum mcc_parser_status {
 
 // -------------------- Parser Error
 
-struct mcc_parser_error {
-    struct mcc_ast_source_location *loc;
-    char *error_msg;
+struct mcc_parser_error_errors{
+
+    struct {
+
+        struct mcc_parser_error *error;
+        int count;
+      };
+
 };
 
-struct mcc_parser_error *new_parser_error(struct mcc_ast_source_location *loc, char *msg);
+struct mcc_parser_error {
+
+    char err_msg[1024];
+};
+
+//struct mcc_parser_error *new_parser_error(struct mcc_ast_source_location *loc, char *msg);
 
 // -------------------- Parser Result
 
 struct mcc_parser_result {
     enum mcc_parser_status status;
 
-    struct mcc_parser_error *parser_error;
-    struct mcc_ast_expression *expression;
+
+    struct mcc_parser_error_errors *errors;
+   // struct mcc_ast_function *function;
     struct mcc_ast_program *program;
-    struct mcc_ast_identifier *identifier;
-    struct mcc_ast_function *function;
-    struct mcc_ast_literal *literal;
+
 };
 
+struct mcc_parser_error_errors *new_parser_error_errors();
+
+struct mcc_parser_error_errors *parsing_error(struct mcc_parser_error_errors *errors,
+        struct mcc_parser_error *error);
 struct mcc_parser_result mcc_parse_string(const char *input);
 
-struct mcc_parser_result mcc_parse_file(FILE *input, FILE *error);
+struct mcc_parser_result mcc_parse_file(FILE *input);
+
+void mcc_delete_result(struct mcc_parser_result *result);
 
 
 #endif // MCC_PARSER_H

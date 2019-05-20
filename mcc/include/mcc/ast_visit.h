@@ -12,43 +12,41 @@
 #include "mcc/ast.h"
 
 enum mcc_ast_visit_traversal {
-	MCC_AST_VISIT_DEPTH_FIRST,
-	// TODO: MCC_AST_VISIT_BREADTH_FIRST,
+    MCC_AST_VISIT_DEPTH_FIRST,
+    MCC_AST_VISIT_BREADTH_FIRST,
 };
 
 enum mcc_ast_visit_order {
-	MCC_AST_VISIT_PRE_ORDER,
-	MCC_AST_VISIT_POST_ORDER,
+    MCC_AST_VISIT_PRE_ORDER,
+    MCC_AST_VISIT_POST_ORDER,
 };
 
 // Callbacks
 typedef void (*mcc_ast_visit_literal_cb)(struct mcc_ast_literal *, void *userData);
 typedef void (*mcc_ast_visit_identifier_cb)(struct mcc_ast_identifier *, void *userData);
 typedef void (*mcc_ast_visit_expression_cb)(struct mcc_ast_expression *, void *userData);
-//typedef void (*mcc_ast_visit_single_expression)(struct mcc_ast_single_expression * , void *userData);
-typedef void (*mcc_ast_visit_declaration_cb)(struct mcc_ast_declaration *, void *userData);
+//typedef void (*mcc_ast_visit_declaration_cb)(struct mcc_ast_declaration *, void *userData);
 typedef void (*mcc_ast_visit_statement_cb)(struct mcc_ast_statement *, void *userData);
-typedef void (*mcc_ast_visit_statement_cb)(struct mcc_ast_statement *, void *userData);
+//typedef void (*mcc_ast_visit_assignment_cb)(struct mcc_ast_assignment *, void *userData);
+//typedef void (*mcc_ast_visit_arguments_cb)(struct mcc_ast_arguments *, void *userData);
 typedef void (*mcc_ast_visit_function_def_cb)(struct mcc_ast_function *, void *userData);
 typedef void (*mcc_ast_visit_parameter_cb)(struct mcc_ast_parameter *, void *userData);
 typedef void (*mcc_ast_visit_program_cb)(struct mcc_ast_program *, void *userData);
 
 struct mcc_ast_visitor {
-	enum mcc_ast_visit_traversal traversal;
-	enum mcc_ast_visit_order order;
+    enum mcc_ast_visit_traversal traversal;
+    enum mcc_ast_visit_order order;
 
-	// This will be passed to every callback along with the corresponding AST
-	// node. Use it to share data while traversing the tree.
-	void *userdata;
+    // This will be passed to every callback along with the corresponding AST
+    // node. Use it to share data while traversing the tree.
+    void *userdata;
 
-	mcc_ast_visit_expression_cb expression;
-	mcc_ast_visit_expression_cb expression_binary_op;
-
-	mcc_ast_visit_expression_cb single_expr;
-	mcc_ast_visit_expression_cb single_expr_parenth;
-	mcc_ast_visit_expression_cb single_expr_unary_op;
-    mcc_ast_visit_expression_cb single_expr_identifier;
-    mcc_ast_visit_expression_cb single_expr_call;
+    mcc_ast_visit_expression_cb expression;
+    mcc_ast_visit_expression_cb expression_binary_op;
+    mcc_ast_visit_expression_cb expression_parenth;
+    mcc_ast_visit_expression_cb expression_unary_op;
+    mcc_ast_visit_expression_cb expression_identifier;
+    mcc_ast_visit_expression_cb expression_call;
 
     mcc_ast_visit_statement_cb statement;
     mcc_ast_visit_statement_cb statement_if;
@@ -57,19 +55,23 @@ struct mcc_ast_visitor {
     mcc_ast_visit_statement_cb statement_compound;
     mcc_ast_visit_statement_cb statement_declaration;
     mcc_ast_visit_statement_cb statement_ret;
+    mcc_ast_visit_statement_cb close_statement_compound;
 
 
     mcc_ast_visit_literal_cb literal;
-	mcc_ast_visit_literal_cb literal_int;
-	mcc_ast_visit_literal_cb literal_float;
-	mcc_ast_visit_literal_cb literal_string;
-	mcc_ast_visit_literal_cb literal_bool;
+    mcc_ast_visit_literal_cb literal_int;
+    mcc_ast_visit_literal_cb literal_float;
+    mcc_ast_visit_literal_cb literal_string;
+    mcc_ast_visit_literal_cb literal_bool;
 
-	mcc_ast_visit_identifier_cb identifier;
-	mcc_ast_visit_function_def_cb function_def ;
-	mcc_ast_visit_parameter_cb parameter;
-	mcc_ast_visit_program_cb  program;
-	mcc_ast_visit_declaration_cb declaration;
+    mcc_ast_visit_identifier_cb identifier;
+    mcc_ast_visit_function_def_cb function_def ;
+    mcc_ast_visit_function_def_cb close_function_def ;
+    mcc_ast_visit_parameter_cb parameter;
+    mcc_ast_visit_program_cb  program;
+    //mcc_ast_visit_declaration_cb declaration;
+    //mcc_ast_visit_assignment_cb  assignment;
+    //mcc_ast_visit_arguments_cb  arguments;
 
 
 
@@ -80,7 +82,12 @@ void mcc_ast_visit_expression(struct mcc_ast_expression *expression, struct mcc_
 
 void mcc_ast_visit_literal(struct mcc_ast_literal *literal, struct mcc_ast_visitor *visitor);
 
-void mcc_ast_visit_declaration(struct mcc_ast_declaration *declaration, struct mcc_ast_visitor *visitor);
+//void mcc_ast_visit_declaration(struct mcc_ast_declaration *declaration, struct mcc_ast_visitor *visitor);
+
+//void mcc_ast_visit_assignment(struct mcc_ast_assignment *assignment, struct mcc_ast_visitor *visitor);
+
+//void mcc_ast_visit_arguments(struct mcc_ast_arguments *arguments, struct mcc_ast_visitor *visitor);
+
 
 void mcc_ast_visit_identifier(struct mcc_ast_identifier *identifier, struct mcc_ast_visitor *visitor);
 
@@ -92,20 +99,16 @@ void mcc_ast_visit_function(struct mcc_ast_function *function, struct mcc_ast_vi
 
 void mcc_ast_visit_program(struct mcc_ast_program *program, struct mcc_ast_visitor *visitor);
 
-void mcc_ast_visit_single_expression(struct mcc_ast_single_expression *single_expr,struct mcc_ast_visitor *visitor);
-
 
 
 // clang-format off
 
 #define mcc_ast_visit(x, visitor) _Generic((x), \
 		struct mcc_ast_expression *: 	mcc_ast_visit_expression, \
-		struct mcc_ast_single_expression *: mcc_ast_visit_single_expression,\
-		struct mcc_ast_literal *:    	mcc_ast_visit_literal, \
-		struct mcc_ast_declaration *:   mcc_ast_visit_declaration, \
 		struct mcc_ast_identifier *:	mcc_ast_visit_identifier, \
+        struct mcc_ast_parameter *:   	mcc_ast_visit_parameter, \
+		struct mcc_ast_literal *:    	mcc_ast_visit_literal, \
 		struct mcc_ast_statement *:		mcc_ast_visit_statement, \
-		struct mcc_ast_parameter *: 	mcc_ast_visit_parameter, \
 		struct mcc_ast_function *: 		mcc_ast_visit_function, \
 		struct mcc_ast_program *:		mcc_ast_visit_program \
 	)(x, visitor)

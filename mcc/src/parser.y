@@ -2,7 +2,7 @@
 
 %define api.pure full
 %lex-param   {void *scanner}
-%parse-param {void *scanner}  {struct mcc_ast_program** result}
+%parse-param {void *scanner}  {struct mcc_parser_result* result}
 
 %define parse.trace
 %define parse.error verbose
@@ -10,11 +10,14 @@
 %code requires {
 #include "mcc/parser.h"
 #include <stdbool.h>
+
 }
 
 %{
+
 #include <string.h>
 #include <stdbool.h>
+
 int mcc_parser_lex();
 void mcc_parser_error();
 
@@ -99,7 +102,7 @@ void mcc_parser_error();
 %type <struct mcc_ast_identifier *> identifier
 %type <struct mcc_ast_declaration *>  declaration
 %type <struct mcc_ast_function *> function
-%type <struct mcc_ast_statement *> statement if_statement while_statement compound_statement  ret_statement
+%type <struct mcc_ast_statement *>statement if_statement while_statement compound_statement  ret_statement
 %type <struct mcc_ast_program *> program
 %type <struct mcc_ast_statement_list *> statement_list
 %type <struct mcc_ast_assignment *> assignment
@@ -114,7 +117,8 @@ void mcc_parser_error();
 
 %%
 
-toplevel : program { *result  = $1; }
+toplevel : program   { result-> program = $1;}// :   program function { $$ = mcc_ast_new_program($1, $2); loc($$, @1); }
+
          ;
 
 type : INT_TYPE { $$ = MCC_AST_DATA_TYPE_INT; }
@@ -124,16 +128,16 @@ type : INT_TYPE { $$ = MCC_AST_DATA_TYPE_INT; }
      | VOID { $$ = MCC_AST_DATA_TYPE_VOID; }
      ;
 
-single_expression  : literal                           { $$ = mcc_ast_new_single_expression_literal($1); loc($$, @1); }
-                   | LPARENTH expression RPARENTH      { $$ = mcc_ast_new_single_expression_parenth($2); loc($$, @2); }
-	        // | expression binary_op expression   { $$ = mcc_ast_new_single_expression_binary_op($2, $1, $3); loc($$, @2); }
-		   | IDENTIFIER                        { $$ = mcc_ast_new_single_expression_identifier($1, NULL); loc($$,@1);}
- 		   | unary_op expression               { $$ = mcc_ast_new_single_expression_unary_op($1, $2); loc($$, @1); }
-                   |  IDENTIFIER LPARENTH arguments RPARENTH    { $$ = mcc_ast_new_single_expression_call_expr($1, NULL);}
+single_expression  : literal                           { $$ = mcc_ast_new_expression_literal($1); loc($$, @1); }
+                   | LPARENTH expression RPARENTH      { $$ = mcc_ast_new_expression_parenth($2); loc($$, @2); }
+	        // | expression binary_op expression   { $$ = mcc_ast_new_expression_binary_op($2, $1, $3); loc($$, @2); }
+		   | IDENTIFIER                        { $$ = mcc_ast_new_expression_identifier($1, NULL); loc($$,@1);}
+ 		   | unary_op expression               { $$ = mcc_ast_new_expression_unary_op($1, $2); loc($$, @1); }
+                   |  IDENTIFIER LPARENTH arguments RPARENTH    { $$ = mcc_ast_new_expression_call_expr($1, NULL);}
                    ;
 
-expression     :  binary_op   { $$ = mcc_ast_new_expression_binary_op($1); }
-                | single_expression                       { $$ = mcc_ast_new_expression_single($1); }
+expression     : expression  binary_op single_expression{ $$ = mcc_ast_new_expression_binary_op($1, $2, $3); loc($$, @2); }
+                | single_expression                       { $$ = $1;}
                 ;
 
 
@@ -169,7 +173,7 @@ unary_op        : MINUS             { $$ = MCC_AST_UNARY_OP_MINUS; }
                 ;
 
 
-arguments        : expression 			{ $$ = mcc_ast_new_arguments($1); loc($$,@1);}
+arguments        : expression 			{ $$ = mcc_ast_new_arguments_expr($1); loc($$,@1);}
 		 | arguments COMMA expression 	{$$ = mcc_ast_new_arguments_expr($1, $3); loc($$, @1);}
            	 ;
 
@@ -217,44 +221,52 @@ assignment:  identifier ASSIGNMENT expression
           	{ $$ = mcc_ast_new_array_assignment($1, $3, $6); 	loc($$, @1); };
           ;
 
-/*call_expression: identifier LPARENTH RPARENTH 		{ $$ = mcc_ast_new_expression_call_expression($1, NULL); loc($$, @1); }
-	       | identifier LPARENTH argument RPARENTH { $$ = mcc_ast_new_expression_call_expression($1, $3); loc($$, @1); }
+/*call_expression: identifier LPARENTH RPARENTH 		{ $$ = mcc_ast_new_expression_call_expression($1, NULL); loc($$, @$); }
+	       | identifier LPARENTH argument RPARENTH { $$ = mcc_ast_new_expression_call_expression($1, $3); loc($$, @$); }
 	       ;*/
 
 
 
 
-parameters: declaration COMMA parameters 	{ $$ = mcc_ast_new_parameter($1, $3); loc($$, @1); }
-	  | declaration 			{ $$ = mcc_ast_new_parameter($1, NULL); loc($$, @1); }
+parameters: declaration COMMA parameters 	{ $$ = mcc_ast_new_parameter($1, $3); loc($$, @$); }
+	  | declaration 			{ $$ = mcc_ast_new_parameter($1, NULL); loc($$, @$); }
           ;
 
-function: type identifier LPARENTH parameters RPARENTH compound_statement{ $$ = mcc_ast_new_function($1, $2, $4, $6);   loc($$, @1);}
+function: type identifier LPARENTH parameters RPARENTH compound_statement{ $$ = mcc_ast_new_function($1, $2, $4, $6);   loc($$, @$);}
 	    ;
 
 
-program :  %empty { $$ = mcc_ast_new_program_empty(); }
-	| program function { $$ = mcc_ast_new_program($1, $2); loc($$, @1); }
-	;
+program :  program function { $$ = mcc_ast_new_program($1, $2); loc($$, @$); }
+         | %empty { $$ = mcc_ast_new_program_empty(); }
+
+;
 
 
 %%
 
 #include <assert.h>
-
+#include <string.h>
 #include "scanner.h"
 #include "utils/unused.h"
 
-void mcc_parser_error(struct MCC_PARSER_LTYPE *yylloc, yyscan_t *scanner, const char *msg)
+void mcc_parser_error(yyscan_t *scanner, struct mcc_parser_result *result, const char *msg)
 {
-	// TODO
-	UNUSED(yylloc);
-	UNUSED(scanner);
-	UNUSED(msg);
+    struct mcc_parser_error *error =  malloc(sizeof(struct mcc_parser_error));
+        strcpy(error->err_msg, msg);
+	result->errors = parsing_error(result->errors, error);
+	result->status = MCC_PARSER_STATUS_UNKNOWN_ERROR;;
+
+    if (scanner){}
+
 }
+
 
 struct mcc_parser_result mcc_parse_string(const char *input)
 {
 	assert(input);
+
+	yyscan_t scanner;
+
 
 	FILE *in = fmemopen((void *)input, strlen(input), "r");
 	if (!in) {
@@ -263,26 +275,29 @@ struct mcc_parser_result mcc_parse_string(const char *input)
 		};
 	}
 
-	struct mcc_parser_result result = mcc_parse_file(in, stderr);
+	struct mcc_parser_result result = mcc_parse_file(in);
 
 	fclose(in);
 
 	return result;
 }
 
-struct mcc_parser_result mcc_parse_file(FILE *input, FILE *error)
+struct mcc_parser_result mcc_parse_file(FILE *input)
 {
 	assert(input);
 
+
+
 	yyscan_t scanner;
-	mcc_parser_lex_init(&scanner);
-	mcc_parser_set_in(input, scanner);
+	 mcc_parser_lex_init(&scanner);
+	 mcc_parser_set_in(input, scanner);
 
-	struct mcc_parser_result result = {
-	    .status = MCC_PARSER_STATUS_OK,
-	};
+	 struct mcc_parser_result result;
 
-	if (yyparse(scanner, &result.expression) != 0) {
+        	result.status = MCC_PARSER_STATUS_OK;
+        	result.errors = new_parser_error_errors();
+
+	if (yyparse(scanner, &result) != 0) {
 		result.status = MCC_PARSER_STATUS_UNKNOWN_ERROR;
 	}
 

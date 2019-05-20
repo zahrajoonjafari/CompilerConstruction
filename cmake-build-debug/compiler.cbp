@@ -8,37 +8,37 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/sima/Desktop/compiler (copy)/cmake-build-debug"/>
+				<Option working_dir="/home/sima/Desktop/CompilerConstruction/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/sima/Desktop/compiler (copy)/cmake-build-debug"/>
+				<Option working_dir="/home/sima/Desktop/CompilerConstruction/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="compiler">
-				<Option output="/home/sima/Desktop/compiler (copy)/cmake-build-debug/compiler" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sima/Desktop/compiler (copy)/cmake-build-debug"/>
+				<Option output="/home/sima/Desktop/CompilerConstruction/cmake-build-debug/compiler" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sima/Desktop/CompilerConstruction/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/include"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/include/mcc"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/src/utils"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/vendor/cutest"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/include"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/include/mcc"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/src/utils"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -46,24 +46,24 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 compiler"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 compiler"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="compiler/fast">
-				<Option output="/home/sima/Desktop/compiler (copy)/cmake-build-debug/compiler" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sima/Desktop/compiler (copy)/cmake-build-debug"/>
+				<Option output="/home/sima/Desktop/CompilerConstruction/cmake-build-debug/compiler" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sima/Desktop/CompilerConstruction/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/include"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/include/mcc"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/src/utils"/>
-					<Add directory="/home/sima/Desktop/compiler (copy)/mcc/vendor/cutest"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/include"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/include/mcc"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/src/utils"/>
+					<Add directory="/home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -71,87 +71,87 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 compiler/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 compiler/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/sima/Desktop/compiler (copy)/cmake-build-debug"/>
+				<Option working_dir="/home/sima/Desktop/CompilerConstruction/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/compiler\ (copy)/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sima/Desktop/CompilerConstruction/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/app/mc_ast_to_dot.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/app/mc_ast_to_dot.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/app/mcc.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/app/mcc.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/parser.tab.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/parser.tab.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/scanner.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/scanner.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/builddir/meson-private/sanitycheckc.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/builddir/meson-private/sanitycheckc.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/include/mcc/ast.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/include/mcc/ast.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/include/mcc/ast_print.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/include/mcc/ast_print.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/include/mcc/ast_visit.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/include/mcc/ast_visit.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/include/mcc/parser.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/include/mcc/parser.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/resources/mc_builtins.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/resources/mc_builtins.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/src/ast.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/src/ast.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/src/ast_print.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/src/ast_print.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/src/ast_visit.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/src/ast_visit.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/src/utils/unused.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/src/utils/unused.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/test/unit/parser_test.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/test/unit/parser_test.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/AllTests.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/AllTests.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTest.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTest.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTest.h">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTest.h">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTestTest.c">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTestTest.c">
 			<Option target="compiler"/>
 		</Unit>
-		<Unit filename="/home/sima/Desktop/compiler (copy)/CMakeLists.txt">
+		<Unit filename="/home/sima/Desktop/CompilerConstruction/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

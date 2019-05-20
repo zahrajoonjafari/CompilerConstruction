@@ -5,49 +5,54 @@ CMakeFiles/compiler.dir/mcc/app/mc_ast_to_dot.c.o
  ../mcc/include/mcc/ast.h
  ../mcc/include/mcc/ast_print.h
  ../mcc/include/mcc/parser.h
- /home/sima/Desktop/compiler (copy)/mcc/app/mc_ast_to_dot.c
+ /home/sima/Desktop/CompilerConstruction/mcc/app/mc_ast_to_dot.c
 CMakeFiles/compiler.dir/mcc/app/mcc.c.o
  ../mcc/include/mcc/ast.h
+ ../mcc/include/mcc/ast_print.h
  ../mcc/include/mcc/parser.h
- /home/sima/Desktop/compiler (copy)/mcc/app/mcc.c
+ /home/sima/Desktop/CompilerConstruction/mcc/app/mcc.c
 CMakeFiles/compiler.dir/mcc/builddir/mcc@sha/parser.tab.c.o
  ../mcc/include/mcc/ast.h
  ../mcc/include/mcc/parser.h
- /home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.c
- /home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.h
+ /home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/parser.tab.c
+ /home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/scanner.h
 CMakeFiles/compiler.dir/mcc/builddir/mcc@sha/scanner.c.o
  ../mcc/include/mcc/ast.h
  ../mcc/include/mcc/parser.h
- /home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.h
- /home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.c
+ /home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/parser.tab.h
+ /home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/scanner.c
 CMakeFiles/compiler.dir/mcc/builddir/meson-private/sanitycheckc.c.o
- /home/sima/Desktop/compiler (copy)/mcc/builddir/meson-private/sanitycheckc.c
+ /home/sima/Desktop/CompilerConstruction/mcc/builddir/meson-private/sanitycheckc.c
 CMakeFiles/compiler.dir/mcc/resources/mc_builtins.c.o
- /home/sima/Desktop/compiler (copy)/mcc/resources/mc_builtins.c
+ /home/sima/Desktop/CompilerConstruction/mcc/resources/mc_builtins.c
 CMakeFiles/compiler.dir/mcc/src/ast.c.o
  ../mcc/include/mcc/ast.h
- /home/sima/Desktop/compiler (copy)/mcc/src/ast.c
+ ../mcc/include/mcc/ast_visit.h
+ ../mcc/include/mcc/error.h
+ ../mcc/include/mcc/parser.h
+ ../mcc/include/mcc/symtab.h
+ /home/sima/Desktop/CompilerConstruction/mcc/src/ast.c
 CMakeFiles/compiler.dir/mcc/src/ast_print.c.o
  ../mcc/include/mcc/ast.h
  ../mcc/include/mcc/ast_print.h
  ../mcc/include/mcc/ast_visit.h
- /home/sima/Desktop/compiler (copy)/mcc/src/ast_print.c
+ /home/sima/Desktop/CompilerConstruction/mcc/src/ast_print.c
 CMakeFiles/compiler.dir/mcc/src/ast_visit.c.o
  ../mcc/include/mcc/ast.h
  ../mcc/include/mcc/ast_visit.h
- /home/sima/Desktop/compiler (copy)/mcc/src/ast_visit.c
+ /home/sima/Desktop/CompilerConstruction/mcc/src/ast_visit.c
 CMakeFiles/compiler.dir/mcc/test/unit/parser_test.c.o
  ../mcc/include/mcc/ast.h
  ../mcc/include/mcc/parser.h
  ../mcc/vendor/cutest/CuTest.h
- /home/sima/Desktop/compiler (copy)/mcc/test/unit/main_stub.inc
- /home/sima/Desktop/compiler (copy)/mcc/test/unit/parser_test.c
+ /home/sima/Desktop/CompilerConstruction/mcc/test/unit/main_stub.inc
+ /home/sima/Desktop/CompilerConstruction/mcc/test/unit/parser_test.c
 CMakeFiles/compiler.dir/mcc/vendor/cutest/AllTests.c.o
- /home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/AllTests.c
- /home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTest.h
+ /home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/AllTests.c
+ /home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTest.h
 CMakeFiles/compiler.dir/mcc/vendor/cutest/CuTest.c.o
- /home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTest.c
- /home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTest.h
+ /home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTest.c
+ /home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTest.h
 CMakeFiles/compiler.dir/mcc/vendor/cutest/CuTestTest.c.o
- /home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTest.h
- /home/sima/Desktop/compiler (copy)/mcc/vendor/cutest/CuTestTest.c
+ /home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTest.h
+ /home/sima/Desktop/CompilerConstruction/mcc/vendor/cutest/CuTestTest.c

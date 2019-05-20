@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <libgen.h>
 #include "mcc/ast.h"
+#include "mcc/ast_print.h"
 #include "mcc/parser.h"
+
+
 
 void print_usage(const char *prg)
 {
@@ -11,15 +14,29 @@ void print_usage(const char *prg)
     printf("  <FILE>        Input filepath or - for stdin\n");
 }
 
-int main(int argc, char *argv[])
+
+void error_compiler(const char *msg, FILE *error, struct mcc_parser_result* result)
+
 {
+    fprintf(error, "%s", msg);
+
+    for (int i = 0; i < result->errors[i].count; i++) {
+        fprintf(error, "%s\n", result->errors->error[i].err_msg);
+    }
+
+}
+int main(int argc, char *argv[]){
+
+     FILE *in = stdin;
+     FILE *error = stderr;
+
     if (argc < 2) {
         print_usage(argv[0]);
         return EXIT_FAILURE;
     }
 
     // determine input source
-    FILE *in;
+
     if (strcmp("-", argv[1]) == 0) {
         in = stdin;
     } else {
@@ -30,18 +47,18 @@ int main(int argc, char *argv[])
         }
     }
 
-    struct mcc_ast_expression *expr = NULL;
 
-    // parsing phase
-    {
-        struct mcc_parser_result result = mcc_parse_file(in, stderr);
-        fclose(in);
-        if (result.status != MCC_PARSER_STATUS_OK) {
-            printf("NOT OK");
-            return EXIT_FAILURE;
-        }
-        expr = result.expression;
+
+
+    /* parsing phase */
+
+    struct mcc_parser_result result = mcc_parse_file(in);
+    fclose(in);
+    if(result.status == MCC_PARSER_STATUS_UNKNOWN_ERROR){
+        error_compiler("parsing_error\n", error, &result);
+
     }
+
 
     // TODO:
     // - run semantic checks
@@ -50,7 +67,7 @@ int main(int argc, char *argv[])
     // - invoke backend compiler
 
     // cleanup
-    mcc_ast_delete(expr);
+    mcc_delete_result(&result);
 
     return EXIT_SUCCESS;
 }

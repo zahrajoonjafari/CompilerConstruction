@@ -10,6 +10,7 @@
 %option yylineno
 
 %{
+#include <string.h>
 #include "parser.tab.h"
 
 #define YYSTYPE MCC_PARSER_STYPE

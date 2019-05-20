@@ -24,11 +24,33 @@ mcc/ast.h
 mcc/ast.h
 ../mcc/include/mcc/mcc/ast.h
 
+../mcc/include/mcc/error.h
+stdio.h
+-
+mcc/ast.h
+../mcc/include/mcc/mcc/ast.h
+mcc/parser.h
+-
+mcc/ast_visit.h
+-
+
 ../mcc/include/mcc/parser.h
 stdio.h
 -
 mcc/ast.h
 ../mcc/include/mcc/mcc/ast.h
+
+../mcc/include/mcc/symtab.h
+stdbool.h
+-
+assert.h
+-
+mcc/ast.h
+../mcc/include/mcc/mcc/ast.h
+mcc/error.h
+../mcc/include/mcc/mcc/error.h
+mcc/ast_visit.h
+-
 
 ../mcc/vendor/cutest/CuTest.h
 setjmp.h
@@ -36,39 +58,45 @@ setjmp.h
 stdarg.h
 -
 
-/home/sima/Desktop/compiler (copy)/mcc/app/mc_ast_to_dot.c
+/home/sima/Desktop/CompilerConstruction/mcc/app/mc_ast_to_dot.c
 stdio.h
 -
 stdlib.h
 -
 string.h
 -
+libgen.h
+-
 mcc/ast.h
-/home/sima/Desktop/compiler (copy)/mcc/app/mcc/ast.h
+/home/sima/Desktop/CompilerConstruction/mcc/app/mcc/ast.h
 mcc/ast_print.h
-/home/sima/Desktop/compiler (copy)/mcc/app/mcc/ast_print.h
+/home/sima/Desktop/CompilerConstruction/mcc/app/mcc/ast_print.h
 mcc/parser.h
-/home/sima/Desktop/compiler (copy)/mcc/app/mcc/parser.h
+/home/sima/Desktop/CompilerConstruction/mcc/app/mcc/parser.h
 
-/home/sima/Desktop/compiler (copy)/mcc/app/mcc.c
+/home/sima/Desktop/CompilerConstruction/mcc/app/mcc.c
 stdio.h
 -
 stdlib.h
 -
 string.h
 -
+libgen.h
+-
 mcc/ast.h
-/home/sima/Desktop/compiler (copy)/mcc/app/mcc/ast.h
+/home/sima/Desktop/CompilerConstruction/mcc/app/mcc/ast.h
+mcc/ast_print.h
+/home/sima/Desktop/CompilerConstruction/mcc/app/mcc/ast_print.h
 mcc/parser.h
-/home/sima/Desktop/compiler (copy)/mcc/app/mcc/parser.h
+/home/sima/Desktop/CompilerConstruction/mcc/app/mcc/parser.h
 
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.c
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/parser.tab.c
 string.h
 -
 stdbool.h
 -
 mcc/parser.h
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/mcc/parser.h
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/mcc/parser.h
 stdbool.h
 -
 stddef.h
@@ -87,18 +115,20 @@ stdio.h
 -
 assert.h
 -
+string.h
+-
 scanner.h
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.h
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/scanner.h
 utils/unused.h
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/utils/unused.h
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/utils/unused.h
 
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.h
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/parser.tab.h
 mcc/parser.h
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/mcc/parser.h
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/mcc/parser.h
 stdbool.h
 -
 
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.c
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/scanner.c
 stdio.h
 -
 string.h
@@ -108,13 +138,15 @@ errno.h
 stdlib.h
 -
 inttypes.h
+-
+string.h
 -
 parser.tab.h
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/parser.tab.h
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/parser.tab.h
 unistd.h
 -
 
-/home/sima/Desktop/compiler (copy)/mcc/builddir/mcc@sha/scanner.h
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/mcc@sha/scanner.h
 stdio.h
 -
 string.h
@@ -128,21 +160,47 @@ inttypes.h
 unistd.h
 -
 
-/home/sima/Desktop/compiler (copy)/mcc/src/ast_print.c
+/home/sima/Desktop/CompilerConstruction/mcc/builddir/meson-private/sanitycheckc.c
+
+/home/sima/Desktop/CompilerConstruction/mcc/src/ast.c
+mcc/ast.h
+/home/sima/Desktop/CompilerConstruction/mcc/src/mcc/ast.h
+assert.h
+-
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+stdbool.h
+-
+mcc/symtab.h
+-
+
+/home/sima/Desktop/CompilerConstruction/mcc/src/ast_print.c
 mcc/ast_print.h
-/home/sima/Desktop/compiler (copy)/mcc/src/mcc/ast_print.h
+/home/sima/Desktop/CompilerConstruction/mcc/src/mcc/ast_print.h
 assert.h
 -
 stdio.h
 -
 mcc/ast_visit.h
-/home/sima/Desktop/compiler (copy)/mcc/src/mcc/ast_visit.h
-../include/mcc/ast.h
--
+/home/sima/Desktop/CompilerConstruction/mcc/src/mcc/ast_visit.h
 mcc/ast.h
 -
 
-/home/sima/Desktop/compiler (copy)/mcc/test/unit/main_stub.inc
+/home/sima/Desktop/CompilerConstruction/mcc/src/ast_visit.c
+mcc/ast_visit.h
+/home/sima/Desktop/CompilerConstruction/mcc/src/mcc/ast_visit.h
+assert.h
+-
+mcc/ast.h
+-
+string.h
+/home/sima/Desktop/CompilerConstruction/mcc/src/string.h
+
+/home/sima/Desktop/CompilerConstruction/mcc/test/unit/main_stub.inc
 stdio.h
 -
 stdlib.h
@@ -150,13 +208,15 @@ stdlib.h
 CuTest.h
 -
 
-/home/sima/Desktop/compiler (copy)/mcc/test/unit/parser_test.c
+/home/sima/Desktop/CompilerConstruction/mcc/test/unit/parser_test.c
 CuTest.h
 -
 mcc/ast.h
-/home/sima/Desktop/compiler (copy)/mcc/test/unit/mcc/ast.h
+-
+stdlib.h
+-
 mcc/parser.h
-/home/sima/Desktop/compiler (copy)/mcc/test/unit/mcc/parser.h
+/home/sima/Desktop/CompilerConstruction/mcc/test/unit/mcc/parser.h
 main_stub.inc
-/home/sima/Desktop/compiler (copy)/mcc/test/unit/main_stub.inc
+/home/sima/Desktop/CompilerConstruction/mcc/test/unit/main_stub.inc
 

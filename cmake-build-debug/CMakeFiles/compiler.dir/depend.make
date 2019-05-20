@@ -7,6 +7,7 @@ CMakeFiles/compiler.dir/mcc/app/mc_ast_to_dot.c.o: ../mcc/include/mcc/parser.h
 CMakeFiles/compiler.dir/mcc/app/mc_ast_to_dot.c.o: ../mcc/app/mc_ast_to_dot.c
 
 CMakeFiles/compiler.dir/mcc/app/mcc.c.o: ../mcc/include/mcc/ast.h
+CMakeFiles/compiler.dir/mcc/app/mcc.c.o: ../mcc/include/mcc/ast_print.h
 CMakeFiles/compiler.dir/mcc/app/mcc.c.o: ../mcc/include/mcc/parser.h
 CMakeFiles/compiler.dir/mcc/app/mcc.c.o: ../mcc/app/mcc.c
 
@@ -25,6 +26,10 @@ CMakeFiles/compiler.dir/mcc/builddir/meson-private/sanitycheckc.c.o: ../mcc/buil
 CMakeFiles/compiler.dir/mcc/resources/mc_builtins.c.o: ../mcc/resources/mc_builtins.c
 
 CMakeFiles/compiler.dir/mcc/src/ast.c.o: ../mcc/include/mcc/ast.h
+CMakeFiles/compiler.dir/mcc/src/ast.c.o: ../mcc/include/mcc/ast_visit.h
+CMakeFiles/compiler.dir/mcc/src/ast.c.o: ../mcc/include/mcc/error.h
+CMakeFiles/compiler.dir/mcc/src/ast.c.o: ../mcc/include/mcc/parser.h
+CMakeFiles/compiler.dir/mcc/src/ast.c.o: ../mcc/include/mcc/symtab.h
 CMakeFiles/compiler.dir/mcc/src/ast.c.o: ../mcc/src/ast.c
 
 CMakeFiles/compiler.dir/mcc/src/ast_print.c.o: ../mcc/include/mcc/ast.h

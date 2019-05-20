@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="compiler" targetName="compiler" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b76b98e-e5d2-44a2-a013-c5543f9c64ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mcc/include/mcc/error.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mcc/include/mcc/symtab.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mcc/src/parser.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mcc/src/sementic_check.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mcc/src/symbol_table.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mcc/test/unit/semantic_chk_test.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mcc/test/unit/symbol_table_test.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ooooo/mcc/test/unit/semantic_chk_test.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ooooo/mcc/test/unit/symbol_table_test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mc_ast_to_dot.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mc_ast_to_dot.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mcc.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mcc.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/mcc/builddir/mcc@sha/scanner.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/compiler.dir/mcc/builddir/mcc@sha/scanner.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/compiler.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/compiler.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/binary_search/binary_search.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/binary_search/binary_search.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/binary_search/binary_search.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/empty/empty.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/empty/empty.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/empty/empty.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/fem/fem.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/fem/fem.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/fem/fem.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/leap_year/leap_year.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/leap_year/leap_year.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/leap_year/leap_year.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/leibniz_pi/leibniz_pi.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/leibniz_pi/leibniz_pi.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/leibniz_pi/leibniz_pi.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/lucas_number/lucas_number.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/lucas_number/lucas_number.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/lucas_number/lucas_number.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/mandelbrot/mandelbrot.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/mandelbrot/mandelbrot.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/mandelbrot/mandelbrot.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/number_guessing/number_guessing.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/number_guessing/number_guessing.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/number_guessing/number_guessing.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/prime/prime.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/prime/prime.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/prime/prime.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/sorting_network/sorting_network.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/sorting_network/sorting_network.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/sorting_network/sorting_network.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/subset_sum/subset_sum.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/subset_sum/subset_sum.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/subset_sum/subset_sum.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/taylor/taylor.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/taylor/taylor.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/taylor/taylor.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/app/mc_ast_to_dot.c" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/app/mc_ast_to_dot.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/app/mcc.c" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/app/mcc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/include/mcc/ast.h" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/include/mcc/ast.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/include/mcc/ast_visit.h" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/include/mcc/ast_visit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/include/mcc/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/include/mcc/parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/meson.build" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/meson.build" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/src/ast.c" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/src/ast.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/src/ast_print.c" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/src/ast_print.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/src/ast_visit.c" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/src/ast_visit.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/src/parser.y" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/src/parser.y" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/src/scanner.l" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/src/scanner.l" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcc/test/unit/parser_test.c" beforeDir="false" afterPath="$PROJECT_DIR$/mcc/test/unit/parser_test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mc_ast_to_dot.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mc_ast_to_dot.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mcc.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/mcc/app/mcc.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/mcc/builddir/mcc@sha/scanner.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/CMakeFiles/compiler.dir/mcc/builddir/mcc@sha/scanner.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/cmake-build-debug/compiler.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/cmake-build-debug/compiler.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/binary_search/binary_search.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/binary_search/binary_search.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/binary_search/binary_search.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/empty/empty.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/empty/empty.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/empty/empty.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/fem/fem.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/fem/fem.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/fem/fem.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/leap_year/leap_year.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/leap_year/leap_year.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/leap_year/leap_year.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/leibniz_pi/leibniz_pi.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/leibniz_pi/leibniz_pi.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/leibniz_pi/leibniz_pi.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/lucas_number/lucas_number.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/lucas_number/lucas_number.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/lucas_number/lucas_number.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/mandelbrot/mandelbrot.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/mandelbrot/mandelbrot.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/mandelbrot/mandelbrot.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/number_guessing/number_guessing.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/number_guessing/number_guessing.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/number_guessing/number_guessing.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/prime/prime.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/prime/prime.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/prime/prime.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/sorting_network/sorting_network.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/sorting_network/sorting_network.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/sorting_network/sorting_network.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/subset_sum/subset_sum.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/subset_sum/subset_sum.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/subset_sum/subset_sum.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/taylor/taylor.mc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/taylor/taylor.stdin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/examples/taylor/taylor.stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/app/mc_ast_to_dot.c" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/app/mc_ast_to_dot.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/app/mcc.c" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/app/mcc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/include/mcc/ast.h" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/include/mcc/ast.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/include/mcc/ast_print.h" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/include/mcc/ast_print.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/include/mcc/ast_visit.h" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/include/mcc/ast_visit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/include/mcc/parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/include/mcc/parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/src/ast.c" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/src/ast.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/src/ast_print.c" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/src/ast_print.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/src/ast_visit.c" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/src/ast_visit.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/src/parser.y" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/src/parser.y" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/src/scanner.l" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/src/scanner.l" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ooooo/mcc/test/unit/parser_test.c" beforeDir="false" afterPath="$PROJECT_DIR$/ooooo/mcc/test/unit/parser_test.c" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/include/mcc/ast.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-11417">
+              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/src/parser.y">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1602">
+              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/src/parser.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <folding>
+                <element signature="e#1#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/src/scanner.l">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1885">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/app/mcc.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1421">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/src/ast_visit.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/src/ast.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+              <folding>
+                <element signature="e#2#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mcc/test/unit/parser_test.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1163">
+              <caret line="474" column="16" selection-start-line="474" selection-start-column="16" selection-end-line="474" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcc/include/mcc/parser.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="899">
+              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <folding>
+                <element signature="e#300#318#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ident_symbol</find>
+      <find>call</find>
+      <find>ERROR_ARG_NUM</find>
+      <find>ret</find>
+      <find>statement_ret</find>
+      <find>DUBL</find>
+      <find>dec</find>
+      <find>symtab_insert</find>
+      <find>FUN_DUB</find>
+      <find>ERROR_ARG_TYPE</find>
+      <find>symtab_main</find>
+      <find>ERROR_FUN_DEF_MIS</find>
+      <find>mcc_ast_visitor</find>
+      <find>symbol_table_lookup</find>
+      <find>stati</find>
+      <find>static</find>
+      <find>empty</find>
+      <find>‘mcc_ast_print_dot_arguments</find>
+      <find>3</find>
+      <find>assignment</find>
+      <find>delete</find>
+      <find>function</find>
+      <find>struct mcc_ast_function *function</find>
+      <find>literal</find>
+      <find>main</find>
+      <find>semantic_chk_main</find>
+      <find>ERROR_ARG_TY</find>
+      <find>mcc_ast_new_expression_call_expr</find>
+      <find>entry</find>
+      <find>new_parser_error_errors</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>mcc</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/mcc/include/mcc/symtabable.h" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/semantic.h" />
+        <option value="$PROJECT_DIR$/mcc/src/semantic_check.c" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/symtab.c" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/ast_visit.h" />
+        <option value="$PROJECT_DIR$/mcc/src/symtab.c" />
+        <option value="$PROJECT_DIR$/mcc/src/ast (copy).c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/mcc/src/as" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/error.h" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/symtab.h" />
+        <option value="$PROJECT_DIR$/mcc/src/scanner.l" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/ast_print.h" />
+        <option value="$PROJECT_DIR$/mcc/src/ast_visit.c" />
+        <option value="$PROJECT_DIR$/mcc/src/ast_print.c" />
+        <option value="$PROJECT_DIR$/mcc/src/symbol_table.c" />
+        <option value="$PROJECT_DIR$/mcc/src/sementic_check.c" />
+        <option value="$PROJECT_DIR$/mcc/test/unit/semantic_chk_test.c" />
+        <option value="$PROJECT_DIR$/mcc/test/unit/symbol_table_test.c" />
+        <option value="$PROJECT_DIR$/mcc/src/ast.c" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/ast.h" />
+        <option value="$PROJECT_DIR$/mcc/app/mc_ast_to_dot.c" />
+        <option value="$PROJECT_DIR$/mcc/app/mcc.c" />
+        <option value="$PROJECT_DIR$/mcc/src/parser.c" />
+        <option value="$PROJECT_DIR$/mcc/src/parser.y" />
+        <option value="$PROJECT_DIR$/mcc/include/mcc/parser.h" />
+        <option value="$PROJECT_DIR$/mcc/test/unit/parser_test.c" />
+      </list>
+    </option>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="134" />
+    <option name="y" value="39" />
+    <option name="width" value="1269" />
+    <option name="height" value="1552" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompilerConstruction" type="462c0819:PsiDirectoryNode" />
+              <item name="mcc" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="compiler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.advertisement.text.has.clang-format" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ObjectiveC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/mcc/src/symbol_table.c" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mcc/src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="compiler" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="compiler" TARGET_NAME="compiler" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="compiler" RUN_TARGET_NAME="compiler">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b76b98e-e5d2-44a2-a013-c5543f9c64ac" name="Default Changelist" comment="" />
+      <created>1556547585247</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556547585247</updated>
+      <workItem from="1556547586794" duration="146000" />
+      <workItem from="1556547762593" duration="9642000" />
+      <workItem from="1556608831465" duration="8803000" />
+      <workItem from="1556619150478" duration="10091000" />
+      <workItem from="1556631706646" duration="13493000" />
+      <workItem from="1556697566726" duration="768000" />
+      <workItem from="1556785288248" duration="23491000" />
+      <workItem from="1556869566009" duration="4215000" />
+      <workItem from="1556882793998" duration="2422000" />
+      <workItem from="1556961451584" duration="5726000" />
+      <workItem from="1557045984864" duration="20930000" />
+      <workItem from="1557125442373" duration="5489000" />
+      <workItem from="1557132553966" duration="14494000" />
+      <workItem from="1557215148331" duration="12230000" />
+      <workItem from="1557233080323" duration="6068000" />
+      <workItem from="1557305948758" duration="11152000" />
+      <workItem from="1557318262632" duration="10614000" />
+      <workItem from="1557390071129" duration="6698000" />
+      <workItem from="1557398082111" duration="14996000" />
+      <workItem from="1557482257924" duration="4181000" />
+      <workItem from="1557488665998" duration="168000" />
+      <workItem from="1557496292027" duration="2064000" />
+      <workItem from="1557583494028" duration="6226000" />
+      <workItem from="1557645213827" duration="5899000" />
+      <workItem from="1557658507944" duration="5154000" />
+      <workItem from="1557666541272" duration="4487000" />
+      <workItem from="1557731776960" duration="14588000" />
+      <workItem from="1557747912620" duration="20399000" />
+      <workItem from="1557825910663" duration="6910000" />
+      <workItem from="1557833865267" duration="20543000" />
+      <workItem from="1557901525539" duration="6031000" />
+      <workItem from="1557913786033" duration="1573000" />
+      <workItem from="1557921612962" duration="10066000" />
+      <workItem from="1557941296676" duration="5283000" />
+      <workItem from="1558000414104" duration="13035000" />
+      <workItem from="1558031935095" duration="6485000" />
+      <workItem from="1558337646268" duration="5997000" />
+      <workItem from="1558347209202" duration="2836000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="323860000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="134" y="35" width="2602" height="1789" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21360382" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296126" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3296126" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960223" weight="0.25279054" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003978" side_tool="true" weight="0.25279054" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.3296126" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3296126" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32975337" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21002387" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3296126" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3296126" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960223" weight="0.25279054" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003978" side_tool="true" weight="0.25279054" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.3296126" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3296126" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32975337" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/symtabable.h" />
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/semantic_check.h" />
+    <entry file="file://$PROJECT_DIR$/mcc/src/semantic_check.c" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14333" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/symtab.c" />
+    <entry file="file://$PROJECT_DIR$/mcc/src/ast (copy).c" />
+    <entry file="file://$PROJECT_DIR$/mcc/.clang-format">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation_scheme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1073">
+          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/ss.c" />
+    <entry file="file://$PROJECT_DIR$/mcc/src/ss" />
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/new" />
+    <entry file="file://$PROJECT_DIR$/mcc/src/as" />
+    <entry file="file:///usr/include/stdio.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="317" column="42" selection-start-line="317" selection-start-column="42" selection-end-line="317" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="135" column="31" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/utils/unused.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/vendor/cutest/CuTest.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/ast_print.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/symbol_table.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding>
+            <element signature="e#2#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/symtab.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4031">
+          <caret line="139" column="80" selection-start-line="139" selection-start-column="80" selection-end-line="139" selection-end-column="80" />
+          <folding>
+            <element signature="e#54#66#0" expanded="true" />
+            <element signature="e#102#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/error.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="38" column="87" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="87" />
+          <folding>
+            <element signature="e#34#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/sementic_check.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="181" column="29" selection-start-line="181" selection-start-column="29" selection-end-line="181" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/test/unit/symbol_table_test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/test/unit/semantic_chk_test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/ast_print.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10208">
+          <caret line="352" column="39" selection-start-line="352" selection-start-column="39" selection-end-line="352" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/app/mc_ast_to_dot.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/app/mcc.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1421">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/ast.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <element signature="e#2#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/ast_visit.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/ast_visit.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/scanner.l">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1885">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding>
+            <element signature="e#1#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/src/parser.y">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1602">
+          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/ast.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11417">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/include/mcc/parser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="e#300#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcc/test/unit/parser_test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1163">
+          <caret line="474" column="16" selection-start-line="474" selection-start-column="16" selection-end-line="474" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

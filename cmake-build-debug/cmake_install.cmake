@@ -1,4 +1,4 @@
-# Install script for directory: /home/sima/Desktop/compiler (copy)
+# Install script for directory: /home/sima/Desktop/CompilerConstruction
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sima/Desktop/compiler (copy)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sima/Desktop/CompilerConstruction/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
