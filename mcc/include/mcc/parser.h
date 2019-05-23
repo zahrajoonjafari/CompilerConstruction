@@ -9,7 +9,6 @@
 #define MCC_PARSER_H
 
 #include <stdio.h>
-
 #include "mcc/ast.h"
 
 enum mcc_parser_status {
@@ -44,8 +43,7 @@ struct mcc_parser_result {
 
 
     struct mcc_parser_error_errors *errors;
-   // struct mcc_ast_function *function;
-    struct mcc_ast_program *program;
+    struct mcc_ast_function *function_parser;
 
 };
 

@@ -96,14 +96,15 @@ void mcc_parser_error();
 %type <enum mcc_ast_binary_op> binary_op
 %type <enum mcc_ast_unary_op> unary_op
 
-%type <struct mcc_ast_single_expression *> single_expression
+%type <struct mcc_ast_expression *> single_expression
 %type <struct mcc_ast_expression *> expression //call_expression
 %type <struct mcc_ast_literal *> literal
 %type <struct mcc_ast_identifier *> identifier
 %type <struct mcc_ast_declaration *>  declaration
+%type <struct mcc_ast_function_def*> function_def
 %type <struct mcc_ast_function *> function
 %type <struct mcc_ast_statement *>statement if_statement while_statement compound_statement  ret_statement
-%type <struct mcc_ast_program *> program
+//%type <struct mcc_ast_program *> program
 %type <struct mcc_ast_statement_list *> statement_list
 %type <struct mcc_ast_assignment *> assignment
 %type <struct mcc_ast_parameter *> parameters
@@ -117,7 +118,8 @@ void mcc_parser_error();
 
 %%
 
-toplevel : program   { result-> program = $1;}// :   program function { $$ = mcc_ast_new_program($1, $2); loc($$, @1); }
+toplevel : function { result->function_parser = $1;}
+          | expression { result->function_parser = mcc_ast_pro_func_def($1);}
 
          ;
 
@@ -133,10 +135,10 @@ single_expression  : literal                           { $$ = mcc_ast_new_expres
 	        // | expression binary_op expression   { $$ = mcc_ast_new_expression_binary_op($2, $1, $3); loc($$, @2); }
 		   | IDENTIFIER                        { $$ = mcc_ast_new_expression_identifier($1, NULL); loc($$,@1);}
  		   | unary_op expression               { $$ = mcc_ast_new_expression_unary_op($1, $2); loc($$, @1); }
-                   |  IDENTIFIER LPARENTH arguments RPARENTH    { $$ = mcc_ast_new_expression_call_expr($1, NULL);}
+                   |  IDENTIFIER LPARENTH arguments RPARENTH    { $$ = mcc_ast_new_expression_call_expr($1, $3);}
                    ;
 
-expression     : expression  binary_op single_expression{ $$ = mcc_ast_new_expression_binary_op($1, $2, $3); loc($$, @2); }
+expression     : expression  binary_op single_expression{ $$ = mcc_ast_new_expression_binary_op($2, $1, $3); loc($$, @2); }
                 | single_expression                       { $$ = $1;}
                 ;
 
@@ -173,7 +175,7 @@ unary_op        : MINUS             { $$ = MCC_AST_UNARY_OP_MINUS; }
                 ;
 
 
-arguments        : expression 			{ $$ = mcc_ast_new_arguments_expr($1); loc($$,@1);}
+arguments        : expression 			{ $$ = $1; loc($$,@1);}
 		 | arguments COMMA expression 	{$$ = mcc_ast_new_arguments_expr($1, $3); loc($$, @1);}
            	 ;
 
@@ -206,6 +208,7 @@ while_statement: WHILE LPARENTH expression RPARENTH statement { $$ = mcc_ast_new
 		;
 
 compound_statement: LBRACE statement_list RBRACE { $$ = mcc_ast_new_statement_compound($2); loc($$, @$); }
+                   | statement    { $$ = mcc_ast_new_statement_compound_single($1);}
 		  ;
 
 statement_list :  %empty { $$ = mcc_ast_new_statement_empty(); }
@@ -230,16 +233,25 @@ assignment:  identifier ASSIGNMENT expression
 
 parameters: declaration COMMA parameters 	{ $$ = mcc_ast_new_parameter($1, $3); loc($$, @$); }
 	  | declaration 			{ $$ = mcc_ast_new_parameter($1, NULL); loc($$, @$); }
+	  | %empty                             { $$ = mcc_ast_new_empty_parameter();  }
           ;
 
-function: type identifier LPARENTH parameters RPARENTH compound_statement{ $$ = mcc_ast_new_function($1, $2, $4, $6);   loc($$, @$);}
+
+
+function : function function_def { $$ = mcc_ast_new_function($1, $2); }
+         | function_def      { $$ = mcc_ast_new_function_def($1); }
+         ;
+
+
+function_def :  type identifier LPARENTH parameters RPARENTH compound_statement
+               { $$ = mcc_ast_new_function_def_type($1, $2, $4, $6);   loc($$, @$);}
 	    ;
 
 
-program :  program function { $$ = mcc_ast_new_program($1, $2); loc($$, @$); }
-         | %empty { $$ = mcc_ast_new_program_empty(); }
+//program :  program function { $$ = mcc_ast_new_program($1, $2); loc($$, @$); }
+  //       | %empty { $$ = mcc_ast_new_program_empty(); }
 
-;
+//;
 
 
 %%

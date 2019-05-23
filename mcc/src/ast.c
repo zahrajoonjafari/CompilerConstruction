@@ -187,6 +187,8 @@ void mcc_ast_delete_expression(struct mcc_ast_expression *expression) {
 
 //--------------------------------------------------------------------------Statements
 
+
+
 struct mcc_ast_statement *mcc_ast_new_statement_expression (struct mcc_ast_expression *expression){
 
     assert(expression);
@@ -291,6 +293,24 @@ struct mcc_ast_statement *mcc_ast_new_statement_declaration(struct mcc_ast_decla
     return stmt;
 
 }
+
+struct mcc_ast_statement *mcc_ast_new_statement_compound_single(struct mcc_ast_statement *statement){
+
+    assert(statement);
+
+    struct mcc_ast_statement *new_stmt = malloc(sizeof(new_stmt));
+    if(!new_stmt){
+
+        return NULL;
+    }
+
+  new_stmt->stmt = &statement;
+   new_stmt->max_stmt= 1;
+
+    return new_stmt;
+
+}
+
 
 
 struct mcc_ast_statement *mcc_ast_new_statement_compound(struct mcc_ast_statement *compound_stmt,
@@ -641,7 +661,7 @@ mcc_ast_new_assignment(struct mcc_ast_identifier *identifier,
     assign->identifier=identifier;
     assign->single_assign.rhs = rhs;
     assign -> assign_symbol = NULL;
-
+    assign ->ass_counter = NULL;
     return assign;
 
 }
@@ -664,7 +684,7 @@ mcc_ast_new_array_assignment(struct mcc_ast_identifier *identifier,
     assign->array_assign.rhs= rhs;
     assign->identifier=identifier;
     assign->array_assign.assign_expr = assign_expr;
-
+    assign ->ass_counter = assign_expr;
 
     return assign;
 
@@ -720,6 +740,20 @@ struct mcc_ast_parameter *mcc_ast_new_parameter(struct mcc_ast_statement *decl_p
     return parameter;
 }
 
+struct mcc_ast_parameter *mcc_ast_new_empty_parameter()
+{
+    struct mcc_ast_parameter *new_param = malloc(sizeof(new_param));
+
+    if(new_param){
+
+        return NULL;
+    }
+
+    new_param->decl_parameter = NULL;
+    new_param->param_size = 0;
+
+    return new_param;
+}
 
 
 void mcc_ast_delete_parameter(struct mcc_ast_parameter *parameter) {
@@ -733,43 +767,107 @@ void mcc_ast_delete_parameter(struct mcc_ast_parameter *parameter) {
 }
 //----------------------------------------------------------------------------Function
 
-struct mcc_ast_function *mcc_ast_new_function(enum mcc_ast_data_type data_type, struct mcc_ast_identifier *identifier,
-                                              struct mcc_ast_parameter *parameter,
-                                              struct mcc_ast_statement *compound_stmt)
+
+
+
+
+
+struct mcc_ast_function_def *mcc_ast_new_function_def_type(enum mcc_ast_data_type data_type,
+                                                           struct mcc_ast_identifier *identifier,
+                                                           struct mcc_ast_parameter *parameter,
+                                                           struct mcc_ast_statement *compound_stmt)
 
 {
     assert(identifier);
-    //assert(parameter);
-    //assert(compound_stmt);
+    assert(parameter);
+    assert(compound_stmt);
 
-    struct mcc_ast_function *func = malloc(sizeof(func));
-    struct mcc_ast_function_def *func_def = malloc(sizeof(func_def));
-
-    if (!func){
-
-        return  NULL;
+    struct mcc_ast_function_def *fun = malloc(sizeof(fun));
+    if(!fun){
+        return NULL;
     }
 
-    //
-    func->function_def->data_type = MCC_AST_DATA_TYPE_VOID;
-    func_def-> data_type = data_type;
-    func_def->identifier = identifier;
-    func_def->parameter = parameter;
-    func->statement = compound_stmt;
+    fun->parameter= parameter;
+    fun->identifier= identifier;
+    fun->data_type = data_type;
+    fun->compound_stmt= compound_stmt;
 
-    func ->function_def = func_def;
+
+
+
+    return fun;
+}
+
+struct mcc_ast_function *mcc_ast_new_function(struct mcc_ast_function *fun,
+                                              struct mcc_ast_function_def *fun_def){
+
+    assert(fun);
+    assert(fun_def);
+
+    if(fun->size_function >= fun->max_function){
+
+    void * new_fun = realloc(fun, sizeof(struct mcc_ast_function *)*fun->max_function * 4);
+      fun->fun_def= new_fun;
+      fun->size_function *= 4 ;
+
+    }
+
+    //fun->fun_def[fun->max_function] = fun_def;
+    fun->size_function++;
+    return fun;
+}
+
+struct mcc_ast_function *mcc_ast_new_function_def(struct mcc_ast_function_def *fun){
+
+  assert(fun);
+  struct mcc_ast_function *func = malloc(sizeof(func));
+  if(!func){
+      return NULL;
+  }
+
+  func->max_function = 1;
+  func->fun_def = fun;
+  func->fun_def = malloc(sizeof(struct mcc_ast_function * )* func->max_function);
+  func->size_function= 0;
 
     return func;
 }
 
+
+struct mcc_ast_function *mcc_ast_pro_func_def(struct mcc_ast_expression *expr){
+
+    assert(expr);
+
+    struct mcc_ast_function_def* fun = malloc(sizeof(fun));
+
+    if(!fun){
+
+        return NULL;
+    }
+
+    fun->compound_stmt= mcc_ast_new_statement_compound_single(mcc_ast_new_statement_expression(expr));
+    fun->identifier->data_type = MCC_AST_DATA_TYPE_VOID;
+    fun->parameter = mcc_ast_new_empty_parameter();
+    //fun->identifier = mcc_ast_new_identifier();
+    fun->data_type = MCC_AST_DATA_TYPE_VOID;
+
+    struct mcc_ast_function *function = malloc(sizeof(function));
+
+    function->max_function = 1;
+    function->fun_def = fun;
+    return function;
+
+}
 void mcc_ast_delete_function(struct mcc_ast_function *function) {
     assert(function);
 
     mcc_ast_delete_function(function);
 
-    if (function -> function_def != NULL) {
-        mcc_ast_delete_parameter(function -> function_def->parameter);
-        mcc_ast_delete_statement(function->statement);
+    if (function ->fun_def != NULL) {
+        mcc_ast_delete_parameter(function -> fun_def->parameter);
+        mcc_ast_delete_statement(function->fun_def->compound_stmt);
+        mcc_ast_delete_identifier(function->fun_def->identifier);
+
     }
 
     free(function);
@@ -777,7 +875,7 @@ void mcc_ast_delete_function(struct mcc_ast_function *function) {
 
 
 //----------------------------------------------------------------------------Program
-
+/*
 struct mcc_ast_program *mcc_ast_new_program_empty()
 {
     struct mcc_ast_program *pro=malloc(sizeof(pro));
@@ -836,4 +934,4 @@ void mcc_ast_delete_program(struct mcc_ast_program *pro)
         free(pro->function);
         free(pro);
     }
-}
+}*/

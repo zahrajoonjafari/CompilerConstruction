@@ -207,7 +207,6 @@ struct mcc_ast_expression *mcc_ast_new_expression_binary_op(enum mcc_ast_binary_
 
 
 
-
 void mcc_ast_delete_expression(struct mcc_ast_expression *expression);
 
 
@@ -240,8 +239,6 @@ struct mcc_ast_identifier {
     struct mcc_ast_node node;
     enum mcc_ast_data_type data_type;
      char *value;
-     //har *new_value;
-
 
 };
 
@@ -336,7 +333,6 @@ struct mcc_ast_statement {
         //MCC_AST_STATEMENT_COMPOUND
         struct
         {
-
             int num_stmt;
             int max_stmt;
             struct mcc_ast_statement **stmt;
@@ -363,6 +359,7 @@ struct mcc_ast_statement *mcc_ast_new_statement_compound(struct mcc_ast_statemen
                                                          struct mcc_ast_statement *statement);
 struct mcc_ast_statement *mcc_ast_new_statement_single(struct mcc_ast_statement *statement);
 
+struct mcc_ast_statement *mcc_ast_new_statement_compound_single(struct mcc_ast_statement *statement);
 
 struct mcc_ast_statement *mcc_ast_new_statement_ret( struct mcc_ast_expression* ret_expr);
 
@@ -383,6 +380,7 @@ struct mcc_ast_assignment {
     enum mcc_ast_assignment_type type;
     struct mcc_ast_identifier *identifier;
     struct mcc_ast_symbol *assign_symbol;
+    struct mcc_ast_expression *ass_counter;
     union {
         struct {
             struct mcc_ast_expression *rhs;
@@ -416,13 +414,47 @@ struct mcc_ast_parameter {
     struct mcc_ast_statement **decl_parameter;
 };
 
+struct mcc_ast_parameter *mcc_ast_new_empty_parameter();
 struct mcc_ast_parameter *mcc_ast_new_parameter(struct mcc_ast_statement *decl_parameter, struct mcc_ast_parameter *parameter);
 
 void mcc_ast_delete_parameter(struct mcc_ast_parameter *parameter);
 
 
 // -------------------------------------------------------------------- Function
+struct mcc_ast_function
+{
+    struct mcc_ast_node node;
+    int max_function;
+    int size_function;
+    struct mcc_ast_function_def* fun_def;
 
+
+};
+
+struct mcc_ast_function_def {
+
+    struct mcc_ast_node node;
+    enum mcc_ast_data_type data_type;
+    struct mcc_ast_identifier *identifier;
+    struct mcc_ast_parameter *parameter;
+    struct mcc_ast_statement *compound_stmt;
+};
+
+
+struct mcc_ast_function_def *mcc_ast_new_function_def_type(enum mcc_ast_data_type data_type,
+                                                           struct mcc_ast_identifier *identifier,
+                                                             struct mcc_ast_parameter *parameter,
+                                                                     struct mcc_ast_statement *compound_stmt);
+struct mcc_ast_function *mcc_ast_new_function(struct mcc_ast_function *fun,
+                                              struct mcc_ast_function_def *fun_def);
+
+struct mcc_ast_function *mcc_ast_new_function_def(struct mcc_ast_function_def *fun);
+
+struct mcc_ast_function *mcc_ast_pro_func_def(struct mcc_ast_expression *expr);
+
+
+void mcc_ast_delete_function(struct mcc_ast_function *function);
+/*
 struct mcc_ast_function {
     struct mcc_ast_node node;
     struct mcc_ast_function_def *function_def;
@@ -447,10 +479,10 @@ struct mcc_ast_function *mcc_ast_new_function(enum mcc_ast_data_type data_type,
                                               struct mcc_ast_statement *compound_stmt);
 
 
-void mcc_ast_delete_function(struct mcc_ast_function *function);
+void mcc_ast_delete_function(struct mcc_ast_function *function);*/
 
 // -------------------------------------------------------------------- Program
-
+/*
 struct mcc_ast_program {
     struct mcc_ast_node node;
     int max_function;
@@ -465,7 +497,7 @@ struct mcc_ast_program *mcc_ast_new_program_empty();
 
 
 void mcc_ast_delete_program(struct mcc_ast_program *program);
-
+*/
 
 // -------------------------------------------------------------------- Utility
 

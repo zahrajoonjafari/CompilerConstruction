@@ -20,7 +20,6 @@ extern "C" {
         ERROR_ID_UNDEF,
         ERROR_FUNC_DUBL,
         ERROR_FUN_DEF_MIS,
-        ERROR_WRONG_PARAM_TYPE,
         ERROR_IF_DEF_MIS,
         ERROR_WHILE_DEF_MIS,
         ERROR_ARG_NUM,
@@ -37,7 +36,6 @@ extern "C" {
 
 
 void mcc_error_list(const char *err_msg, int line_err, struct mcc_parser_result *result, ...);
-struct mcc_parser_result *mcc_ast_semantic_chk(struct mcc_parser_result *result);
 struct mcc_parser_result *sem_result;
 struct mcc_parser_result *st_result;
 

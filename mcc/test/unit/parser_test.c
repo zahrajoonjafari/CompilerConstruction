@@ -7,7 +7,7 @@
 // Threshold for floating point comparisons.
 
 
-static const double EPS = 1e-3;
+//static const double EPS = 1e-3;
 
 /*
 void BinaryOp_1(CuTest *tc)
@@ -411,7 +411,7 @@ void StatementAssignment(CuTest *tc) {
 
 }*/
 
-
+/*
 
 void ast_generation(CuTest *tc){
 
@@ -428,20 +428,21 @@ void ast_generation(CuTest *tc){
     struct mcc_parser_result  result =  mcc_parse_string(input);
     CuAssertIntEquals(tc,  MCC_PARSER_STATUS_OK ,result.status);
 
-    struct mcc_ast_program  *program = malloc(sizeof(program));
-    struct mcc_ast_function **function = result.program->function;
-    for(int i = 0; i < program->max_function; i++ ){
+    struct mcc_ast_function *function = result.function_parser;
+    //struct mcc_ast_function_def *function_parser = function->fun_def;
 
-     CuAssertTrue(tc, MCC_AST_DATA_TYPE_VOID == function[i]->function_def->data_type);
+    for(int i = 0; i < function->max_function; i++ ){
+
+     CuAssertTrue(tc, MCC_AST_DATA_TYPE_VOID == function->fun_def[i].data_type);
     }
 
-    CuAssertIntEquals(tc, MCC_AST_DATA_TYPE_VOID ,function[program->max_function -1]->function_def->data_type);
+    CuAssertIntEquals(tc, MCC_AST_DATA_TYPE_VOID ,function[function->max_function -1].fun_def->data_type);
 
-    CuAssertIntEquals(tc, 4, function[program->max_function -1]->statement->max_stmt);
+    CuAssertIntEquals(tc, 4, function[function->max_function -1].fun_def->compound_stmt->num_stmt);
 
-   CuAssertIntEquals(tc, MCC_AST_STATEMENT_TYPE_DECL, function[program->max_function -1]->statement[1].type);
+   CuAssertIntEquals(tc, MCC_AST_STATEMENT_TYPE_DECL, function[function->max_function -1].fun_def->compound_stmt->type);
 
-     mcc_ast_delete(program);
+     mcc_delete_result(&result);
 
 
 }
@@ -469,10 +470,9 @@ void Literal (CuTest *tc)
     mcc_ast_delete_literal(i_value);
     mcc_ast_delete_literal(f_value);
 }
-
+*/
 #define TESTS \
-	TEST(ast_generation) \
-	TEST(Literal)\
+	
 
 #include "main_stub.inc"
 #undef TESTS

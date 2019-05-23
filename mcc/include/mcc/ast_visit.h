@@ -28,8 +28,8 @@ typedef void (*mcc_ast_visit_expression_cb)(struct mcc_ast_expression *, void *u
 //typedef void (*mcc_ast_visit_declaration_cb)(struct mcc_ast_declaration *, void *userData);
 typedef void (*mcc_ast_visit_statement_cb)(struct mcc_ast_statement *, void *userData);
 //typedef void (*mcc_ast_visit_assignment_cb)(struct mcc_ast_assignment *, void *userData);
-//typedef void (*mcc_ast_visit_arguments_cb)(struct mcc_ast_arguments *, void *userData);
-typedef void (*mcc_ast_visit_function_def_cb)(struct mcc_ast_function *, void *userData);
+typedef void (*mcc_ast_visit_arguments_cb)(struct mcc_ast_arguments *, void *userData);
+typedef void (*mcc_ast_visit_function_def_cb)(struct mcc_ast_function_def *, void *userData);
 typedef void (*mcc_ast_visit_parameter_cb)(struct mcc_ast_parameter *, void *userData);
 typedef void (*mcc_ast_visit_program_cb)(struct mcc_ast_program *, void *userData);
 
@@ -68,10 +68,10 @@ struct mcc_ast_visitor {
     mcc_ast_visit_function_def_cb function_def ;
     mcc_ast_visit_function_def_cb close_function_def ;
     mcc_ast_visit_parameter_cb parameter;
-    mcc_ast_visit_program_cb  program;
+   // mcc_ast_visit_program_cb  program;
     //mcc_ast_visit_declaration_cb declaration;
     //mcc_ast_visit_assignment_cb  assignment;
-    //mcc_ast_visit_arguments_cb  arguments;
+    mcc_ast_visit_arguments_cb  arguments;
 
 
 
@@ -89,7 +89,7 @@ void mcc_ast_visit_literal(struct mcc_ast_literal *literal, struct mcc_ast_visit
 //void mcc_ast_visit_arguments(struct mcc_ast_arguments *arguments, struct mcc_ast_visitor *visitor);
 
 
-void mcc_ast_visit_identifier(struct mcc_ast_identifier *identifier, struct mcc_ast_visitor *visitor);
+//void mcc_ast_visit_identifier(struct mcc_ast_identifier *identifier, struct mcc_ast_visitor *visitor);
 
 void mcc_ast_visit_statement(struct mcc_ast_statement *statement,struct mcc_ast_visitor *visitor);
 
@@ -97,7 +97,10 @@ void mcc_ast_visit_parameter(struct mcc_ast_parameter *parameter, struct mcc_ast
 
 void mcc_ast_visit_function(struct mcc_ast_function *function, struct mcc_ast_visitor *visitor);
 
-void mcc_ast_visit_program(struct mcc_ast_program *program, struct mcc_ast_visitor *visitor);
+void mcc_ast_visit_function_def(struct mcc_ast_function_def *function_def, struct mcc_ast_visitor *visitor);
+
+//void mcc_ast_visit_program(struct mcc_ast_program *program, struct mcc_ast_visitor *visitor);
+
 
 
 
@@ -105,12 +108,11 @@ void mcc_ast_visit_program(struct mcc_ast_program *program, struct mcc_ast_visit
 
 #define mcc_ast_visit(x, visitor) _Generic((x), \
 		struct mcc_ast_expression *: 	mcc_ast_visit_expression, \
-		struct mcc_ast_identifier *:	mcc_ast_visit_identifier, \
         struct mcc_ast_parameter *:   	mcc_ast_visit_parameter, \
 		struct mcc_ast_literal *:    	mcc_ast_visit_literal, \
 		struct mcc_ast_statement *:		mcc_ast_visit_statement, \
 		struct mcc_ast_function *: 		mcc_ast_visit_function, \
-		struct mcc_ast_program *:		mcc_ast_visit_program \
+		struct mcc_ast_function_def *:  mcc_ast_visit_function_def,\
 	)(x, visitor)
 
 // clang-format on

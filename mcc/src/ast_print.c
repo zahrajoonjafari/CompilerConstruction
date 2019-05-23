@@ -1,7 +1,7 @@
-#include "mcc/ast_print.h"
-
 #include <assert.h>
-#include <stdio.h>
+#include <stdlib.h>
+#include <memory.h>
+#include "mcc/ast_print.h"
 #include "mcc/ast_visit.h"
 
 #include <mcc/ast.h>
@@ -260,7 +260,7 @@ static void print_dot_expression_call(struct mcc_ast_expression  *expression, vo
 
 
 //--------------------------------------------------------Identifier
-
+/*
 static void print_dot_identifier(struct mcc_ast_identifier *identifier, void *data ){
 
     assert(identifier);
@@ -272,7 +272,7 @@ static void print_dot_identifier(struct mcc_ast_identifier *identifier, void *da
     FILE *out = data;
     print_dot_node(out, identifier, label);
 
-}
+}*/
 //-----------------------------------------------------------------Statements
 
 
@@ -406,7 +406,7 @@ static void print_dot_declaration(struct mcc_ast_declaration *declaration,
 }
 */
 // ------------------------------------------------------------------- Parameter
-
+/*
 static void print_dot_parameter(struct mcc_ast_parameter *parameter, void *data)
 {
     assert(parameter);
@@ -421,31 +421,36 @@ static void print_dot_parameter(struct mcc_ast_parameter *parameter, void *data)
     }
 
 
-}
+}*/
 
 // ------------------------------------------------------------------- Function
 
-static void print_dot_function(struct mcc_ast_function *function, void *data)
+static void print_dot_function_def(struct mcc_ast_function_def *function_def, void *data)
 {
-    assert(function);
+    assert(function_def);
     assert(data);
 
     char label[LABEL_SIZE] = { 0 };
-    snprintf(label, sizeof(label), "func: %s",mcc_ast_print_data_type(function->function_def-> data_type));
+    snprintf(label, sizeof(label), "func: %s",mcc_ast_print_data_type(function_def-> data_type));
 
     FILE *out = data;
-    print_dot_node(out, function, label);
-    print_dot_edge(out, function, function->function_def->identifier, "identifier");
-    if (function->function_def->parameter) {
-        print_dot_edge(out, function, function->function_def->parameter, "parameter");
+    print_dot_node(out, function_def, label);
+    print_dot_edge(out, function_def, function_def->identifier, "identifier");
+    if (function_def->parameter != NULL) {
+        for(int i = 0 ; i < function_def->parameter->param_len; i++){
+
+            print_dot_edge(out, function_def, function_def->parameter->decl_parameter[i], "parameter");
+
+        }
+
     }
-    if (function->statement) {
-        print_dot_edge(out, function, function->statement, "body");
+    if (function_def->compound_stmt) {
+        print_dot_edge(out, function_def, function_def->compound_stmt, "body");
     }
 }
 
 // ------------------------------------------------------------------- Program
-
+/*
 static void print_dot_program(struct mcc_ast_program *program, void *data)
 {
     assert(program);
@@ -457,7 +462,7 @@ static void print_dot_program(struct mcc_ast_program *program, void *data)
         print_dot_edge(out, program, program->function[i],
                        "function_definition");
     }
-}
+}*/
 
 //------------------------------------------------ Setup an AST Visitor for printing.
 static struct mcc_ast_visitor print_dot_visitor(FILE *out)
@@ -493,16 +498,15 @@ static struct mcc_ast_visitor print_dot_visitor(FILE *out)
             .literal_bool = print_dot_literal_bool,
 
 
-            .identifier = print_dot_identifier,
-            .program = print_dot_program,
-            .parameter = print_dot_parameter,
+           // .identifier = print_dot_identifier,
+           // .parameter = print_dot_parameter,
             //.declaration = print_dot_declaration,
-            .function_def = print_dot_function
+            .function_def = print_dot_function_def
 
     };
 }
 
-void mcc_ast_print_dot_expression(FILE *out, struct mcc_ast_expression *expression)
+/*void mcc_ast_print_dot_expression(FILE *out, struct mcc_ast_expression *expression)
 {
     assert(out);
     assert(expression);
@@ -556,8 +560,8 @@ void mcc_ast_print_dot_literal(FILE *out, struct mcc_ast_literal *literal)
 
     print_dot_end(out);
 }
-
-void mcc_ast_print_dot_function(FILE *out, struct mcc_ast_function *function)
+*/
+void mcc_ast_print_dot_function_def(FILE *out, struct mcc_ast_function *function)
 {
     assert(out);
     assert(function);
@@ -565,7 +569,7 @@ void mcc_ast_print_dot_function(FILE *out, struct mcc_ast_function *function)
     print_dot_begin(out);
 
     struct mcc_ast_visitor visitor = print_dot_visitor(out);
-    mcc_ast_visit(function, &visitor);
+    mcc_ast_visit_function(function, &visitor);
 
     print_dot_end(out);
 }
